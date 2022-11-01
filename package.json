@@ -1,0 +1,14 @@
+{
+  "name": "testapp1",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Maksym Datsenko",
+  "main": "ping.js",
+  "scripts": {
+    "start": "node ping.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "utf8": "^3.0.0"
+  }
+}
