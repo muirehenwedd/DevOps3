@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapp1-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: testapp1-pod
+  template:
+    metadata:
+      labels:
+        app: testapp1-pod
+    spec:
+      containers:
+        - name: testapp1-container
+          image: testapp1_image:latest
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            failureThreshold: 2
